@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanSky - Explore</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/explore.css">
+    <link rel="stylesheet" href="css/new-header.css">
+    
+    <!-- OpenStreetMap Leaflet CSS and JS -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" 
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" 
+          crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" 
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" 
+            crossorigin=""></script>
+    <!-- PTGui Viewer JavaScript -->
+    <script type="text/javascript" src="js/PTGuiViewer.js"></script>
+    <script type="text/javascript">
+        // Initialize the viewer variable globally
+        var viewer = null;
+    </script>
+</head>
+<body>
+    <!-- Loading indicator -->
+    <div class="loading-indicator" id="loadingIndicator">
+        <div class="loading-spinner"></div>
+    </div>
+
+    
+
+     <!-- Columbia CAVE Header -->
+    <header class="cave-header">
+        <div class="cave-header-content">
+            <img src="assets/images/logo.png" alt="CAVE Logo" class="cave-logo">
+            <a href="/" class="cave-title">Columbia Imaging and Vision Laboratory</a>
+        </div>
+    </header>
+
+    <!-- I hardcodede the Columbia CAVE Navigation -->
+    <nav class="cave-navbar">
+        <div class="cave-nav-container">
+            <ul class="cave-navlist">
+                <li class="cave-nav-item"><a href="https://cave.cs.columbia.edu" class="cave-nav-link">Home</a></li>
+                <li class="cave-nav-item"><a href="https://cave.cs.columbia.edu/people" class="cave-nav-link">People</a></li>
+                <li class="cave-nav-item"><a href="https://cave.cs.columbia.edu/projects" class="cave-nav-link">Projects</a></li>
+                <li class="cave-nav-item"><a href="https://cave.cs.columbia.edu/publications" class="cave-nav-link">Publications</a></li>
+                <li class="cave-nav-item"><a href="https://cave.cs.columbia.edu/repository" class="cave-nav-link">Repository</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- UrbanSky Header -->
+    <div class="urbansky-header">
+        <div class="urbansky-header-content">
+            <h1 class="urbansky-title">UrbanSky</h1>
+            <ul class="urbansky-navbar">
+                <li class="urbansky-nav-item"><a href="index.html" class="urbansky-nav-link">About</a></li>
+                <li class="urbansky-nav-item"><a href="explore.html" class="urbansky-nav-link active">Explore</a></li>
+                <li class="urbansky-nav-item"><a href="acquisition.html" class="urbansky-nav-link">Acquisition</a></li>
+                <li class="urbansky-nav-item"><a href="#" class="urbansky-nav-link">Download</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        
+
+        <!-- Interactive Map Section -->
+        <div class="map-container" id="map">
+            <!-- Map will be rendered here -->
+            
+            <!-- Map Toggle Buttons -->
+            <div class="map-toggle">
+                <button class="toggle-btn active" id="nycToggle">New York City</button>
+                <button class="toggle-btn" id="columbiaToggle">Columbia Campus</button>
+            </div>
+        </div>
+
+        <!-- Image Display Row -->
+        <div class="image-row-container" id="imageRowContainer">
+            <div class="image-row" id="imageRow">
+                <!--caapture thumbnails will be added here dynamically -->
+            </div>
+        </div>
+
+        <!-- Dual Image View -->
+        <div class="dual-view" id="dualView">
+            <!-- Spherical Image -->
+            <div class="spherical-view">
+                <div class="view-container">
+                    <div class="spherical-image">
+                        <img id="sphericalImage" src="" alt="Spherical image">
+                    </div>
+                </div>
+                <div class="view-label">Spherical Image</div>
+            </div>
+
+            <!-- Panorama Image -->
+            <div class="panorama-view">
+                <div class="view-container">
+                    <div class="panorama-image">
+                        <img id="panoramaImage" src="" alt="Panorama image">
+                    </div>
+                </div>
+                <div class="view-label">Panorama</div>
+            </div>
+        </div>
+
+        <!-- Interactive Perspective View and Metadata -->
+        <div class="bottom-section">
+            <!-- Interactive Perspective View -->
+            <div class="perspective-view" id="mypanoviewer" style="height: 400px;">
+                <!-- PTGuiViewer will render here -->
+            </div>
+
+            <!-- Metadata Display -->
+            <div class="metadata-display" id="metadataDisplay">
+                
+                <table class="metadata-table" id="metadataTable">
+                    <tr>
+                        <th>Date:</th>
+                        <td id="metaDate">-</td>
+                    </tr>
+                    <tr>
+                        <th>Time:</th>
+                        <td id="metaTime">-</td>
+                    </tr>
+                    <tr>
+                        <th>Location:</th>
+                        <td id="metaLocation">-</td>
+                    </tr>
+                    <tr>
+                        <th>Global Horizontal Irradiance:</th>
+                        <td id="metaIrradiance">-</td>
+                    </tr>
+                </table>
+
+                <!-- Weather section with horizontal table -->
+                <div id="weatherSection" class="weather-section">
+                    <!-- Weather data will be added here dynamically -->
+                </div>
+            </div>
+        </div>
+        
+     
+    </div>
+
+    
+    <script src="js/main.js"></script>
+    <script src="js/explore.js"></script>
+</body>
+</html>

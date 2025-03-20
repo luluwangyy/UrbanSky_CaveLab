@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanSky - Acquisition</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/acquisition.css">
+    <link rel="stylesheet" href="css/new-header.css">
+</head>
+<body>
+ 
+    <div class="loading-indicator" id="loadingIndicator">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Columbia CAVE Header -->
+    <header class="cave-header">
+        <div class="cave-header-content">
+            <img src="assets/images/logo.png" alt="CAVE Logo" class="cave-logo">
+            <a href="/" class="cave-title">Columbia Imaging and Vision Laboratory</a>
+        </div>
+    </header>
+
+ <!-- I hardcodede the Columbia CAVE Navigation -->
+    <nav class="cave-navbar">
+        <div class="cave-nav-container">
+            <ul class="cave-navlist">
+                <li class="cave-nav-item"><a href="https://cave.cs.columbia.edu" class="cave-nav-link">Home</a></li>
+                <li class="cave-nav-item"><a href="https://cave.cs.columbia.edu/people" class="cave-nav-link">People</a></li>
+                <li class="cave-nav-item"><a href="https://cave.cs.columbia.edu/projects" class="cave-nav-link">Projects</a></li>
+                <li class="cave-nav-item"><a href="https://cave.cs.columbia.edu/publications" class="cave-nav-link">Publications</a></li>
+                <li class="cave-nav-item"><a href="https://cave.cs.columbia.edu/repository" class="cave-nav-link">Repository</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- UrbanSky Header -->
+    <div class="urbansky-header">
+        <div class="urbansky-header-content">
+            <h1 class="urbansky-title">UrbanSky</h1>
+            <ul class="urbansky-navbar">
+                <li class="urbansky-nav-item"><a href="index.html" class="urbansky-nav-link">About</a></li>
+                <li class="urbansky-nav-item"><a href="explore.html" class="urbansky-nav-link">Explore</a></li>
+                <li class="urbansky-nav-item"><a href="acquisition.html" class="urbansky-nav-link active">Acquisition</a></li>
+                <li class="urbansky-nav-item"><a href="#" class="urbansky-nav-link">Download</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+       
+        <!-- Equipment Section -->
+        <div class="equipment-section">
+            <!-- 360° Camera -->
+            <div class="equipment-column">
+                <div class="equipment-image">
+                     
+                    <img src="assets/images/camera.jpg" alt="360° Camera">
+                </div>
+                <div class="equipment-caption">(a) 360° Camera</div>
+                 
+            </div>
+
+            <!-- Camera with ND Filter -->
+            <div class="equipment-column">
+                <div class="equipment-image">
+                    <img src="assets/images/nd_filter.jpg" alt="Camera with ND Filter">
+                </div>
+                <div class="equipment-caption">(b) Camera with ND Filter</div>
+                 
+            </div>
+
+            <!-- Pyranometer -->
+            <div class="equipment-column">
+                <div class="equipment-image">
+                     
+                    <img src="assets/images/pyranometer.jpg" alt="Pyranometer">
+                </div>
+                <div class="equipment-caption">(c) Pyranometer</div>
+                 
+            </div>
+        </div>
+
+        <!-- Technical Explanation Section -->
+        <div class="technical-section">
+            <p>
+                We used the 360°camera (Ricoh Theta Z1), shown in (a), to capture 7x bracketed images in each environment. Since the sun is often the dominant light source in the sky, it is critical that we faithfully capture the radiance from the sun. Unfortunately, on a sunny day, the sun's disk will be saturated in all of the captured images since the camera's exposure cannot be lowered beyond a certain point. To faithfully measure the radiance from the sun, we capture a second set of 7x bracketed images with an OD4 neutral density filter (Kodak Wratten 2) between the camera and the sun, as shown in (b). We then use PTGui Pro to merge and stitch the two sets of bracketed images into two HDR panoramas with an equirectangular projection. Finally, we compute the radiance from the sun's disk using the panorama with the neutral density filter and overlay those values onto the panorama without the neutral density filter. This process ensures that none of the measurements of the radiance field are saturated. 
+            </p>
+            <p>
+                Alongside each captured radiance field, we also measure the global horizontal irradiance using a silicon pyranometer (EKO Instruments ML-01) placed directly on top of the 360° camera (see (c)). For each image in the dataset, we include metadata that specifies the capture date, time of day, GPS location, and current weather conditions. 
+            </p>
+            
+             
+        </div>
+
+        <!-- Citation Section -->
+        <div class="citation-section">
+            <h2>Citation</h2>
+            <p class="citation-title">If you use the dataset, please cite:</p>
+            <div class="citation-paper">
+                "Minimal Sensing for Orienting a Solar Panel,"<br>
+                J. Klotz and S.K. Nayar<br>
+                arXiv,<br>
+                2025
+            </div>
+            <div class="citation-links">
+                <a href="#" target="_blank">[PDF]</a>
+                <a href="#" target="_blank">[Project Page]</a>
+                <a href="#" target="_blank">[bib]</a>
+                <a href="#" target="_blank">[(c)]</a>
+            </div>
+        </div>
+    </div>
+
+ 
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,185 @@
+/* Home Page Specific Styles */
+
+/* Main container for grid and spherical view */
+.home-container {
+    display: flex;
+    flex-direction: row;
+    gap: 2rem; /* Increase gap to prevent overlap */
+    margin: 0 auto 2rem;
+    width: 95%; /* Fill most of the screen width */
+    padding: 1rem;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Thumbnail grid styles */
+.thumbnail-grid {
+    display: grid;
+    grid-template-columns: repeat(15, 45px);  
+    grid-template-rows: repeat(8, 45px);  
+    gap: 0px;
+    background-color: transparent;
+    width: auto; /* Let the grid size be determined by content */
+    height: min-content;
+}
+
+.thumbnail {
+    position: relative;
+    width: 45px;  
+    height: 45px;  
+    border-radius: 50%; /* perfect circle */
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s;
+    margin: -4px 1px;  /* First value is for top/bottom, second for left/right */
+    border: none;
+    aspect-ratio: 1/1; /* Ensures perfect circle */
+}
+
+.thumbnail:hover {
+    transform: scale(1.1);
+    z-index: 2;
+}
+
+.thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Main spherical view styles */
+.main-view {
+    position: relative;
+    width: auto; /* Allow width to be determined by JS */
+    max-width: 366px; /* Increased to match the grid height: 8 rows * 45px + 7 gaps * 2px = 366px */
+    aspect-ratio: 1/1; /* Ensures perfect circle */
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.spherical-container {
+    width: 100%;
+    height: 0; /* Height will be controlled by padding-bottom for perfect circle */
+    padding-bottom: 100%; /* This creates a perfect circle regardless of width */
+    border-radius: 50%; /* Perfect circle */
+    overflow: hidden;
+    border: none;
+    box-shadow: none;
+    position: relative; /* For positioning the image inside */
+}
+
+.spherical-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Description section */
+.description {
+    width: 95%; /* Match the width of the home container */
+    margin: 3rem auto;
+    line-height: 1.8;
+}
+
+/* Version section */
+.version-section {
+    width: 95%; /* Match the width of the home container */
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #f8f8f8;
+    border-radius: 4px;
+}
+
+/* Citation section */
+.citation-section {
+    width: 95%; /* Match the width of the home container */
+    margin: 2rem auto;
+}
+
+.citation-title {
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* Loading indicator */
+.loading-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    z-index: 2000;
+}
+
+.loading-spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid #f3f3f3;
+    border-top: 5px solid #000;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .home-container {
+        width: 98%; /* Almost full width on smaller screens */
+    }
+}
+
+@media (max-width: 992px) {
+    .home-container {
+        flex-direction: column;
+        align-items: center;
+        width: 98%;
+    }
+    
+    .thumbnail-grid {
+        grid-template-columns: repeat(15, 45px); /* Maintain 15 columns */
+        grid-template-rows: repeat(8, 45px); /* Maintain 8 rows */
+        width: 100%;
+        max-width: 675px; /* 15 columns * 45px = 675px */
+        margin: 0 auto;
+    }
+    
+    .main-view {
+        margin: 2rem auto;
+        width: 366px !important; /* Force fixed width on mobile */
+        height: 366px !important; /* Force fixed height on mobile */
+    }
+    
+    .description, .version-section, .citation-section {
+        width: 98%;
+    }
+}
+
+@media (max-width: 480px) {
+    .home-container, .description, .version-section, .citation-section {
+        width: 98%;
+    }
+    
+    /* On very small screens, allow scrolling for the grid but keep the exact size */
+    .thumbnail-grid {
+        overflow-x: auto;
+        max-width: 100%;
+    }
+    
+    .main-view {
+        width: 320px !important; /* Slightly larger on mobile */
+        height: 320px !important; /* Slightly larger on mobile */
+    }
+}

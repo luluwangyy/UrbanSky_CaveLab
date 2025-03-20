@@ -1,0 +1,168 @@
+/* Header Styles for UrbanSky Website */
+
+/* Common container for centered content */
+.header-container {
+    width: 100%  ;
+    margin: 0 auto  ;
+}
+
+/* Columbia CAVE Header - top black bar */
+.cave-header {
+    background-color: #000000  ;
+    color: #FFFFFF !important;
+    padding: 1rem 0 !important;
+    width: 100% !important;
+    display: block !important;
+    position: relative !important;
+    z-index: 100 !important;
+}
+
+.cave-header-content {
+    display: flex !important;
+    align-items: center !important;
+    width: 85% !important;
+    margin: 0 auto !important;
+}
+
+.cave-logo {
+    width: 78px !important;
+    height: 78px !important;
+    margin-right: 1rem !important;
+}
+
+.cave-title {
+    font-size: 50px !important;
+    font-weight: bold !important;
+    margin: 0 !important;
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+}
+
+/* CAVE Navigation */
+.cave-navbar {
+    background-color: #000000 !important;
+    padding: 1 !important;
+    width: 100% !important;
+    display: block !important;
+    position: relative !important;
+    z-index: 100 !important;
+}
+
+.cave-nav-container {
+    width: 80% !important;
+    margin: 0 auto !important;
+}
+
+.cave-navlist {
+    display: flex !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 8rem !important;
+    justify-content: flex-start !important;
+    padding-left: 3rem !important;
+
+}
+
+.cave-nav-item {
+    padding: 0.5rem 0 !important;
+    white-space: nowrap !important;
+}
+
+.cave-nav-link {
+    color: #FFFFFF !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    white-space: nowrap !important;
+    font-size: 19px !important;
+}
+
+.cave-nav-link:hover {
+    opacity: 0.8 !important;
+}
+
+/* UrbanSky Header - second white bar */
+.urbansky-header {
+   
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    padding: 0rem 0 !important;
+    width: 100% !important;
+    border: none !important;
+    box-shadow: none !important;
+    display: block !important;
+    position: relative !important;
+    z-index: 99 !important;
+}
+
+.urbansky-header-content {
+    display: flex !important;
+    align-items: center !important;
+    padding-top: 1rem;
+    width: 74% !important;
+    margin: 0 auto !important;
+}
+
+.urbansky-title {
+    font-size: 30px !important;
+    font-weight: bold !important;
+    margin: 0 !important;
+    margin-right: 2rem !important;
+    color: #000000 !important;
+}
+
+/* UrbanSky Navigation */
+.urbansky-navbar {
+    display: flex !important;
+    list-style: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    gap: 2rem !important;
+}
+
+.urbansky-nav-item {
+    margin-right: 0 !important;
+}
+
+.urbansky-nav-link {
+    color: #000000 !important;
+    text-decoration: none !important;
+    font-size: 19px !important;
+}
+
+.urbansky-nav-link:hover {
+    opacity: 0.7 !important;
+}
+
+.urbansky-nav-link.active {
+    font-weight: bold !important;
+}
+
+/* Reset container padding to avoid conflict with header */
+.container {
+    padding-top: 2rem !important;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .cave-header-content, .urbansky-header-content {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        padding: 0 1rem !important;
+    }
+    
+    .cave-logo {
+        margin-bottom: 0.5rem !important;
+    }
+    
+    
+    
+    .cave-navlist, .urbansky-navbar {
+        flex-wrap: wrap !important;
+    }
+    
+    .cave-nav-item, .urbansky-nav-item {
+        margin-right: 1rem !important;
+        margin-bottom: 0.5rem !important;
+    }
+}

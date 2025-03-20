@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UrbanSky</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="stylesheet" href="css/new-header.css">
+</head>
+<body>
+    <!-- Loading indicator -->
+    <div class="loading-indicator" id="loadingIndicator">
+        <div class="loading-spinner"></div>
+    </div>
+
+    <!-- Columbia CAVE Header -->
+    <header class="cave-header">
+        <div class="cave-header-content">
+            <img src="assets/images/logo.png" alt="CAVE Logo" class="cave-logo">
+            <a href="/" class="cave-title">Columbia Imaging and Vision Laboratory</a>
+        </div>
+    </header>
+
+   <!-- I hardcodede the Columbia CAVE Navigation -->
+    <nav class="cave-navbar">
+        <div class="cave-nav-container">
+            <ul class="cave-navlist">
+                <li class="cave-nav-item"><a href="https://cave.cs.columbia.edu" class="cave-nav-link">Home</a></li>
+                <li class="cave-nav-item"><a href="https://cave.cs.columbia.edu/people" class="cave-nav-link">People</a></li>
+                <li class="cave-nav-item"><a href="https://cave.cs.columbia.edu/projects" class="cave-nav-link">Projects</a></li>
+                <li class="cave-nav-item"><a href="https://cave.cs.columbia.edu/publications" class="cave-nav-link">Publications</a></li>
+                <li class="cave-nav-item"><a href="https://cave.cs.columbia.edu/repository" class="cave-nav-link">Repository</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- UrbanSky Header -->
+    <div class="urbansky-header">
+        <div class="urbansky-header-content">
+            <h1 class="urbansky-title">UrbanSky</h1>
+            <ul class="urbansky-navbar">
+                <li class="urbansky-nav-item"><a href="index.html" class="urbansky-nav-link active">About</a></li>
+                <li class="urbansky-nav-item"><a href="explore.html" class="urbansky-nav-link">Explore</a></li>
+                <li class="urbansky-nav-item"><a href="acquisition.html" class="urbansky-nav-link">Acquisition</a></li>
+                <li class="urbansky-nav-item"><a href="#" class="urbansky-nav-link">Download</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Thumbnail grid and main view -->
+        <div class="home-container">
+            <!-- Thumbnail grid will be generated here -->
+            <div class="thumbnail-grid" id="thumbnailGrid"></div>
+            
+            <!-- Main spherical view -->
+            <div class="main-view">
+                <div class="spherical-container">
+                    <img id="mainSphericalImage" src="" alt="Main spherical image">
+                </div>
+            </div>
+        </div>
+
+        <!-- Description Section -->
+        <div class="description">
+            <p>The illumination in dense urban environments can vary dramatically due to shadows and reflections from nearby buildings. Many urban locations never even see the sun—they only capture indirect illumination from nearby infrastructure. The goal of UrbanSky is to capture this diversity of real-world lighting environments in New York City. UrbanSky is a large dataset of <span id="captureCount">XXX</span> high dynamic range (HDR) lighting environments captured across New York City. At each location, we used a 360° camera to capture an HDR panorama and a pyranometer to measure the global horizontal irradiance (see Acquisition for more information). Alongside each capture, we include metadata that specifies the date, time of day, GPS location, and current weather conditions. UrbanSky is publicly available to the research community to encourage future work in solar energy and computer graphics.</p>
+            <br>
+            <p>We have released version 1.0 of the dataset below, which contains <span id="captureCount2">XXX</span> HDR lighting environments. We continue to capture data and will release a new version of UrbanSky as the dataset grows.</p>
+        </div>
+
+        <!-- Citation Section -->
+        <div class="citation-section">
+            <p class="citation-title">If you use the dataset, please cite:</p>
+            <p>"Minimal Sensing for Orienting a Solar Panel,"<br>
+               J. Klotz and S.K. Nayar<br>
+               arXiv,<br>
+               2025</p>
+            <div class="citation-links">
+                <a href="#" target="_blank">[PDF]</a>
+                <a href="#" target="_blank">[Project Page]</a>
+                <a href="#" target="_blank">[bib]</a>
+                <a href="#" target="_blank">[(c)]</a>
+            </div>
+        </div>
+
+        <!-- Version Section -->
+        <div class="version-section">
+            <h2>Versions</h2>
+            <p>March 19, 2025: Version 1.0 of UrbanSky released.</p>
+        </div>
+    </div>
+
+    
+    <script src="js/main.js"></script>
+    <script src="js/home.js"></script>
+</body>
+</html>
